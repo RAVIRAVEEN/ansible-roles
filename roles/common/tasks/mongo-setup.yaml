@@ -24,11 +24,11 @@
   #   ansible.builtin.debug:
   #     msg: "product count is {{ product_count }}"
 
-  - name: load catalogue data
+  - name: "load catalogue data"
     ansible.builtin.shell: mongo --host mongodb.devopsrank.online < /app/schema/{{component}}.js   
     when: product_count.stdout == "0" and component == "catalogue"
 
-  - name: load user data
+  - name: "load user data"
     ansible.builtin.shell: mongo --host mongodb.devopsrank.online < /app/schema/{{component}}.js   
     when: product_count.stdout == "0" and component == "data"
     ignore-errors: true
