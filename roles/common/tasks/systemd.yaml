@@ -1,7 +1,7 @@
 
   - name: "Copy {{component}} service"
     ansible.builtin.copy:
-     src: catalogue.service
+     src: "{{compoent}}.service"
      dest: "/etc/systemd/system/{{component}}.service"
     
 
@@ -11,7 +11,7 @@
 
 
    
-  - name: start and enable {{component}}
+  - name: start and enable "{{component}}"
     ansible.builtin.service:
         name: "{{component}}"
         state: started
