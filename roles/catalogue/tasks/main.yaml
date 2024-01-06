@@ -9,7 +9,3 @@
         tasks_from: nodejs.yaml
         
   
-- name: app set-up
-  ansible.builtin.import_role:
-        name: common
-        tasks_from: mongodb-setup.yaml               
