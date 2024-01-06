@@ -9,20 +9,21 @@
        state: present
     
 
-  - name: gets the catageries count
+  - name: gets the entries count
     ansible.builtin.command: mongo --host mongodb.devopsrank.online --quiet --eval 'db = db.getSiblingDB("catalogue"); db.products.count()'
-    register: product_count
+    register: entries_count
+    when: component == "catalogue"
 
     
-  - name: gets the catageries count
+  - name: gets the entries count
     ansible.builtin.command:  mongo --host mongodb.devopsrank.online --quiet --eval 'db = db.getSiblingDB("users"); db.users.count()'
     register: user_count
-
+    when: component == "user"
 
   # - name: print the count
   #   ansible.builtin.debug:
   #     msg: "product count is {{ product_count }}"
 
-  - name: load catalogue
-    ansible.builtin.command: mongo --host mongodb.devopsrank.online < /app/schema/catalogue.js   
+  - name: "load {{component}}"
+    ansible.builtin.command: mongo --host mongodb.devopsrank.online < /app/schema/{{component}}.js   
     when: product_count.st
