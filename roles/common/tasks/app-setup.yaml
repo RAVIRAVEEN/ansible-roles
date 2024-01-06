@@ -1,8 +1,4 @@
-  - name: Install {{component}}
-    ansible.builtin.package:
-     name: nodejs
-     state: present
-    
+
   - name: create roboshop
     ansible.builtin.user:
      name: roboshop
