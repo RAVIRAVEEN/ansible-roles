@@ -6,6 +6,6 @@ CART_HOST: cart.devopsrank.online
 SHIPPING_HOST: shipping.devopsrank.online
 MYSQL_HOST:  mysql.devopsrank.online
 RABBITMQ_HOST: rabbitmq.devopsrank.online
-PAYMENT_HOST: payment.devopsrank.online
+PAYMENTS_HOST: payments.devopsrank.online
 WEB_HOST: web.devopsrank.online
 DISPATCH_HOST: dispatch.devopsrank.online
