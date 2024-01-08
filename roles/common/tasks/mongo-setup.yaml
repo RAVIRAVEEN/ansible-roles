@@ -32,5 +32,5 @@
     
   -  name: "load user data"
      ansible.builtin.shell: "mongo --host {{MONGODB_HOST}} < /app/schema/{{component}}.js"  
-     when: component == "data" and product_count.stdout == "0"
+     when: component == "data" and user_count.stdout == "0"
      #ignore_errors: true
