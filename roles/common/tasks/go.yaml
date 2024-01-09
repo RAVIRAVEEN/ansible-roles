@@ -12,3 +12,4 @@
    - go build
   args:
     chdir: /app
+
