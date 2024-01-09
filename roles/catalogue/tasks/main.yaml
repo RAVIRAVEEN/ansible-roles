@@ -19,7 +19,7 @@
         name: common
         tasks_from: systemd.yaml
 
-# - name: deployment 
-#   ansible.builtin.import_role:
-#         name: common
-#         tasks_from: deployment.yaml
+- name: deployment 
+  ansible.builtin.import_role:
+        name: common
+        tasks_from: deployment.yaml
