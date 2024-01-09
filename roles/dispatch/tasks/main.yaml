@@ -1,8 +1,4 @@
-- name: go install
-  ansible.builtin.import_role:
-        name: common
-        tasks_from: go.yaml
-         
+
 - name: app set-up
   ansible.builtin.import_role:
         name: common
@@ -20,3 +16,8 @@
         tasks_from: systemd.yaml
 
 
+- name: go install
+  ansible.builtin.import_role:
+        name: common
+        tasks_from: go.yaml
+         
