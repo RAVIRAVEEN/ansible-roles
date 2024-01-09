@@ -14,12 +14,19 @@
         tasks_from: mongo-setup.yaml
 
 
-- name: systemd setup
-  ansible.builtin.import_role:
-        name: common
-        tasks_from: systemd.yaml
+# - name: systemd setup
+#   ansible.builtin.import_role:
+#         name: common
+#         tasks_from: systemd.yaml
 
 - name: deployment 
   ansible.builtin.import_role:
         name: common
         tasks_from: deployment.yaml
+           
+
+- name: systemd setup
+  ansible.builtin.import_role:
+        name: common
+        tasks_from: systemd.yaml
+         
